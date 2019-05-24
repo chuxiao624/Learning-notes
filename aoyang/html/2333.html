@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+  }
+  .second{
+    width: 64px;
+    height: 37px;
+    margin-left: 30px;
+  }
+  .second li{
+    width: 64px;
+    height: 60px;
+    font-size: 16px;
+    color: #333;
+    line-height: 60px;
+  }
+  #hdt{
+    width:2px;
+    height:600px;
+    background:red;
+    position: relative;
+    margin-left: 10px;
+  }
+  #slide{
+    background: #035cac;
+    position: absolute;
+    top: 0px;
+    width: 2px;
+    height: 60px;
+    transition: 0.3s ease;
+  }
+  .box ul,#hdt{
+    float: left;
+  }
+  </style>
+</head>
+<body>
+  <div class="warp">
+    <p><span id="slide"></span></p>
+    <ul class="second">
+      <li>集团动态</li>
+      <li>产业新闻</li>
+      <li>媒体关注</li>
+      <li>视频影像</li>
+    </ul>
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+var second = document.getElementsByClassName('second')[0];
+var linbr = second.getElementsByTagName('li');
+var slider = document.getElementById('slide');
+for (var i = 0; i < linbr.length; i++) {
+  linbr[i].index = i;
+  linbr[i].onmouseover = function() {
+    var speed = 60;
+    slider.style.top = speed*this.index+'px';
+  }
+}
+
+</script>

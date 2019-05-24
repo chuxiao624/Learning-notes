@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css3</title>
+  <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    .warp{
+      width: 500px;
+      height: 40px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .inner{
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: rgb(78, 190, 133);
+      float: left;
+      margin: 0px 10px;
+    }
+    .inner:hover{
+      cursor: pointer;
+    }
+    .box{
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 0px;
+      transition: 0.3s ease;
+      background: rgb(232, 241, 172);
+      top: 60px;
+      overflow: hidden;
+      /* display: none; */
+    }
+    .dian{
+      width: 100%;
+      height: 20px;
+      padding-bottom: 10px;
+      overflow: hidden;
+      display: none;
+    }
+    .quan{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgb(203, 134, 202);
+      margin: 5px auto;
+    }
+    /* ul li{
+      height: 25px;
+      background: red;
+      line-height: 25px;
+      onmouseleave="tadd()"
+    } */
+    span{
+      width: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="warp">
+    <div class="inner">
+      233
+      <div class="box">
+        <ul class="uls">
+          <li>1</li>
+          <li>2</li>
+          <li>2</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        <span></span>
+      </div>
+      <div class="dian"><div class="quan"></div></div>
+      </div>
+    <div class="inner">
+      233
+      <div class="box">
+        <ul class="uls">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        <span></span>
+      </div>
+      <div class="dian"><div class="quan"></div></div>
+      </div>
+    <div class="inner">
+      233
+      <div class="box">
+        <ul class="uls">
+          <li>1</li>
+          <li>2</li>
+        </ul>
+        <span></span>
+      </div>
+      <div class="dian"><div class="quan"></div></div>
+      </div>
+    <div class="inner">
+      233
+      <div class="box">
+        <ul class="uls">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        <span></span>
+      </div>
+      <div class="dian"><div class="quan"></div></div>
+      </div>
+  </div>
+  <div class="warp1"></div>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+
+  var spans = document.getElementsByClassName('box');
+  var dian1 = document.getElementsByClassName('dian');
+  var quan = document.getElementsByClassName('quan');
+  var uls = document.getElementsByClassName('uls');
+  var inner = document.getElementsByClassName('inner');
+
+
+
+  for (var i = 0; i < inner.length; i++) {
+    inner[i].index = i;
+    inner[i].onmouseenter = function() {
+        var ulh = uls[this.index].offsetHeight;
+        var a = this.index;
+        spans[this.index].style.height = ulh+'px';
+        dian1[this.index].style.display = 'block';
+        spans[this.index].style.top = 80+'px';
+        setTimeout(function(){
+          spans[a].style.top = 60+'px';
+        },200)
+    }
+    inner[i].onmouseleave = function() {
+      spans[this.index].style.height = 0+'px';
+      dian1[this.index].style.display = 'none';
+    }
+  }
+
+  (function(){
+    var a = b = "233";
+  })();
+
+
+  console.log(a);
+  console.log(b);
+</script>
