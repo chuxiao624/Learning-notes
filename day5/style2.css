@@ -1,0 +1,35 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+}
+span{
+  font-weight: bold;
+  font-size: 16px;
+}
+.box1 ul{
+  height: 21px;
+}
+.box1 ul li{
+  float: left;
+  margin-right: 10px;
+}
+.box1 p{
+  display: inline-block;
+}
+.jianli{
+  width: 200px;
+  height: 100vh;
+  background: rgb(131, 159, 233);
+  text-align: center;
+  line-height: 160px;
+  color: white;
+}
+.jianli,.warp{
+  float: left;
+}
+.warp{
+  margin-left: 25px;
+  line-height: 30px;
+}
