@@ -1,0 +1,26 @@
+/*基础样式*/
+body,ul,li,p,img,input,div{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+input{
+  border-width: 0;
+  outline: none;
+  background:transparent;
+}
+.clearfix::before,.clearfix::after{
+  display: table;
+  content: "";
+}
+.celearfix::after{
+  clear: both;
+}
+
+/*通用样式*/
+.tac{text-align: center;font-weight: 100;}
+.width{width: 1000px;}
+.mga{margin: 0px auto;}
+.font{font-weight: 100;}
+.color{color: white;}
