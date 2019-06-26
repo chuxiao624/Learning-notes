@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello,world</title>
+  <style media="screen">
+    td{
+      border: 1px solid #aaa;
+      margin: 10px;
+      padding: 10px;
+      display: inline-block;
+      color: rgb(34, 70, 94);
+      background: rgb(187, 187, 187);
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+
+  //3的游戏
+  for (var i = 0; i <= 100; i++) {
+    if (i%3==0 || String(i).indexOf("3")>-1) {
+      console.log('PA');
+      continue;
+    }
+    console.log(i);
+  }
+
+
+  //输出九九乘法表
+  var body = document.getElementsByTagName('body')[0];
+  var td = document.createElement('td');
+  for (var i = 1; i <= 9; i++) {
+    for (var j = 1; j <= i; j++) {
+      var td = document.createElement('td');
+      td.innerHTML = j+'x'+i+'='+(j*i)+'    ';
+      body.appendChild(td);
+    }
+    document.write('<br>');
+  }
+
+
+  //根据当前时间提示问候语
+  var date = new Date();
+  var hours = date.getHours();
+  if (hours<12) {
+    alert('早上好呀!');
+  }else if (hours>=12 && hours<=16) {
+    alert('中午好呀!');
+  }else if (hours>16 && hours>0) {
+    alert('晚上好呀!');
+  }
+
+
+
+</script>
