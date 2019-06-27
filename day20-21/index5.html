@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hi</title>
+  <style media="screen">
+    div{
+      width: 480px;
+      height: 480px;
+      overflow: hidden;
+      margin: 100px auto;
+      position: relative;
+    }
+    div img{
+      position: absolute;
+      top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div><img src="img/erik.jpg" alt=""></div>
+</body>
+</html>
+<script type="text/javascript">
+  //实现一个帧动画
+  var n = -1;
+  var img = document.getElementsByTagName('img')[0];
+  var imgh = img.offsetHeight
+  var t = setInterval(function(){
+    if (n > -(img.offsetHeight-480)) {
+      n-=480;
+      img.style.top = n+'px'
+    }else {
+      n = -1;
+    }
+  },100)
+</script>

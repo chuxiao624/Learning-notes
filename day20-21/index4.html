@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hi</title>
+  <style media="screen">
+    /* button{
+      opacity:
+    } */
+  </style>
+</head>
+<body>
+  <div id="fade-obj" style="width:300px;height:300px;background:#000;opacity:1;"></div>
+  <button id="fade-btn">淡出</button>
+</body>
+</html>
+<script type="text/javascript">
+  var btn = document.querySelector('#fade-btn');
+  var box = document.querySelector('#fade-obj');
+  var flag = true;
+  var opacity = true;
+  var index = 0;
+
+
+  btn.addEventListener('click',function(){
+    if (flag) {
+      var a = 1;
+      flag = false;
+      btn.innerHTML = '淡入';
+      btn.disabled = true;
+      setInt();
+    }else{
+      flag = true;
+      btn.innerHTML = '淡出';
+      btn.disabled = true;
+      setInt()
+    }
+  });
+
+  //setTimeout
+  function setTime() {
+    if (opacity) {
+        if (box.style.opacity>0) {
+          box.style.opacity-=0.01;
+          setTimeout('setTime()',10);
+        }else {
+          opacity = false;
+          btn.disabled = false;
+        }
+    }else {
+        if (box.style.opacity<1) {
+          box.style.opacity = index+=0.01;
+          setTimeout('setTime()',10);
+        }else {
+          opacity = true;
+          btn.disabled = false;
+        }
+    }
+  }
+
+
+ //setInterval
+ function setInt() {
+   var delayed = setInterval(function() {
+     if (opacity) {
+
+       if (box.style.opacity>0) {
+         box.style.opacity-=0.01;
+       }else {
+         opacity = false;
+         clearInterval(delayed);
+         btn.disabled = false;
+       }
+
+     }else {
+       if (box.style.opacity<1) {
+         box.style.opacity=index+=0.01;
+         console.log(1);
+       }else {
+         opacity = true;
+         clearInterval(delayed);
+         btn.disabled = false;
+       }
+     }
+   },10)
+ }
+</script>
